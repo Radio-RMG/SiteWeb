@@ -7,9 +7,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\CategoryRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\TagRepository")
  */
-class Category
+class Tag
 {
     /**
      * @ORM\Id()
@@ -24,14 +24,14 @@ class Category
     private $name;
 
     /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Actuality", mappedBy="tags")
+     */
+    private $actualities;
+
+    /**
      * @ORM\Column(type="string", length=255)
      */
     private $slug;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Actuality", mappedBy="category")
-     */
-    private $actualities;
 
     public function __construct()
     {
@@ -55,18 +55,6 @@ class Category
         return $this;
     }
 
-    public function getSlug(): ?string
-    {
-        return $this->slug;
-    }
-
-    public function setSlug(string $slug): self
-    {
-        $this->slug = $slug;
-
-        return $this;
-    }
-
     /**
      * @return Collection|Actuality[]
      */
@@ -79,7 +67,6 @@ class Category
     {
         if (!$this->actualities->contains($actuality)) {
             $this->actualities[] = $actuality;
-            $actuality->setCategory($this);
         }
 
         return $this;
@@ -89,17 +76,28 @@ class Category
     {
         if ($this->actualities->contains($actuality)) {
             $this->actualities->removeElement($actuality);
-            // set the owning side to null (unless already changed)
-            if ($actuality->getCategory() === $this) {
-                $actuality->setCategory(null);
-            }
         }
 
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
     public function __toString()
     {
         return $this->name;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
     }
 }

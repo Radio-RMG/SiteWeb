@@ -50,14 +50,24 @@ class Actuality
     private $updated;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Category", inversedBy="actualities")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Tag", inversedBy="actualities")
      */
-    private $categories;
+    private $tags;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="actualities")
+     */
+    private $category;
 
     public function __construct()
     {
         $this->created = new DateTime();
-        $this->categories = new ArrayCollection();
+        $this->tags = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -140,15 +150,15 @@ class Actuality
     /**
      * @return Collection|Category[]
      */
-    public function getCategories(): Collection
+    public function getTags(): Collection
     {
-        return $this->categories;
+        return $this->tags;
     }
 
     public function addCategory(Category $category): self
     {
-        if (!$this->categories->contains($category)) {
-            $this->categories[] = $category;
+        if (!$this->tags->contains($category)) {
+            $this->tags[] = $category;
             $category->addActuality($this);
         }
 
@@ -157,11 +167,40 @@ class Actuality
 
     public function removeCategory(Category $category): self
     {
-        if ($this->categories->contains($category)) {
-            $this->categories->removeElement($category);
+        if ($this->tags->contains($category)) {
+            $this->tags->removeElement($category);
             $category->removeActuality($this);
         }
 
         return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->title;
     }
 }
