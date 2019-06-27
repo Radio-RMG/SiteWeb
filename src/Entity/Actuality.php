@@ -67,6 +67,11 @@ class Actuality
      */
     private $category;
 
+    /**
+     * @ORM\Column(type="boolean" , nullable=true)
+     */
+    private $online;
+
     public function __construct()
     {
         $this->created = new DateTime();
@@ -205,5 +210,17 @@ class Actuality
     public function __toString()
     {
         return $this->title;
+    }
+
+    public function getOnline(): ?bool
+    {
+        return $this->online;
+    }
+
+    public function setOnline(bool $online): self
+    {
+        $this->online = $online;
+
+        return $this;
     }
 }

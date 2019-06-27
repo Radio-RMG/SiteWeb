@@ -7,3 +7,9 @@ easy_admin:
           - {entity: 'Actuality', icon: 'newspaper-o', label: 'Articles'}
           - {entity: 'Category', icon: 'inbox', label: 'Catégories' }
           - {entity: 'Tag', icon: 'tags', label: 'Tags' }
+
+      - label: 'Commentaire'
+        icon: 'comments-o'
+        children:
+          - {entity: 'Dedicace', icon: 'comment-o', label: 'Dédicaces'}
+

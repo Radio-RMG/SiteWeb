@@ -1,0 +1,7 @@
+easy_admin:
+  entities:
+    Dedicace:
+      class: App\Entity\Dedicace
+      list:
+        actions: [-new]
+

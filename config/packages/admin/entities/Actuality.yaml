@@ -2,3 +2,43 @@ easy_admin:
   entities:
     Actuality:
       class: App\Entity\Actuality
+      list:
+        fields:
+          - online
+          - id
+          - created
+          - author
+          - title
+          - resume
+          - tags
+          - category
+      show:
+        fields:
+          - id
+          - created
+          - updated
+          - author
+          - title
+          - content
+          - online
+          - tags
+          - category
+      edit:
+        fields:
+          - author
+          - title
+          - resume
+          - content
+          - updated
+          - online
+          - tags
+          - category
+      new:
+        fields:
+          - author
+          - title
+          - resume
+          - content
+          - online
+          - tags
+          - category

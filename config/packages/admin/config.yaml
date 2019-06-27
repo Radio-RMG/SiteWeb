@@ -1,2 +1,12 @@
 easy_admin:
   site_name: 'RMG <em style="font-size: 80%">EasyAdmin</em>'
+  formats:
+    date:     'd/m/Y'
+    time:     'H:i'
+    datetime: 'd/m/Y à H:i:s'
+  list:
+    actions:
+      - { name: 'show', icon: 'eye', label: false, css_class: 'btn btn-secondary'}
+      - { name: 'edit', icon: 'edit', label: false, css_class: 'btn btn-primary'}
+      - { name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger'}
+      - { name: 'new', icon: 'plus', label: Ajouter, css_class: 'btn btn-success'}

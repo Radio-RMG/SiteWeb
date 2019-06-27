@@ -31,7 +31,7 @@ class Tag
 
     /**
      * @Gedmo\Slug(fields={"name"})
-     * @ORM\Column(name="slug", type="string", length=255, unique=true)
+     * @ORM\Column(name="slug", type="string", length=255, unique=true, nullable=true)
      */
     private $slug;
 
