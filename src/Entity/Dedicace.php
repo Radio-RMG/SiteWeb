@@ -33,9 +33,15 @@ class Dedicace
      */
     private $date;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $ip;
+
     public function __construct()
     {
         $this->date = new DateTime();
+        $this->ip = $_SERVER['REMOTE_ADDR'];
     }
 
     public function getId(): ?int
@@ -75,6 +81,18 @@ class Dedicace
     public function setDate(DateTimeInterface $date): self
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+    public function getIp(): ?string
+    {
+        return $this->ip;
+    }
+
+    public function setIp(string $ip): self
+    {
+        $this->ip = $ip;
 
         return $this;
     }

@@ -4,4 +4,25 @@ easy_admin:
       class: App\Entity\Dedicace
       list:
         actions: [-new]
+        fields:
+          - id
+          - date
+          - ip
+          - pseudo
+          - message
+      new:
+        fields:
+          - pseudo
+          - message
+      edit:
+        fields:
+          - pseudo
+          - message
+      show:
+        fields:
+          - id
+          - date
+          - ip
+          - pseudo
+          - message
 

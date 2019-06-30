@@ -220,7 +220,6 @@ class Actuality
     public function setOnline(bool $online): self
     {
         $this->online = $online;
-
         return $this;
     }
 }
