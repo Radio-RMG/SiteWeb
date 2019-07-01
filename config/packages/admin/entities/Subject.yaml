@@ -1,0 +1,25 @@
+easy_admin:
+  entities:
+    Subject:
+      class: App\Entity\Subject
+      list:
+        fields:
+          - id
+          - name
+          - email
+          - contacts
+      new:
+        fields:
+          - name
+          - email
+      edit:
+        fields:
+          - name
+          - email
+      show:
+        fields:
+          - id
+          - name
+          - email
+          - contacts
+

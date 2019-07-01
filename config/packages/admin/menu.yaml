@@ -12,4 +12,9 @@ easy_admin:
         icon: 'comments-o'
         children:
           - {entity: 'Dedicace', icon: 'comment-o', label: 'Dédicaces'}
+      - label: 'Contact'
+        icon: 'address-book-o'
+        children:
+          - {entity: 'Contact', icon: 'address-book-o', label: 'Formulaire'}
+          - {entity: 'Subject', icon: 'map-marker', label: 'Destinataire'}
 

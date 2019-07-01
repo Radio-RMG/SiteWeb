@@ -1,0 +1,31 @@
+easy_admin:
+  entities:
+    Contact:
+      class: App\Entity\Contact
+      list:
+        fields:
+          - id
+          - date
+          - ip
+          - username
+          - subject
+          - message
+      new:
+        fields:
+          - username
+          - subject
+          - email
+          - message
+      edit:
+        fields:
+          - username
+          - message
+      show:
+        fields:
+          - id
+          - date
+          - ip
+          - username
+          - subject
+          - message
+

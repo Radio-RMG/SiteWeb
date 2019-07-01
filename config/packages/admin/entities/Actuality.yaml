@@ -21,8 +21,8 @@ easy_admin:
           - title
           - content
           - online
-          - tags
           - category
+          - tags
       edit:
         fields:
           - author
@@ -31,8 +31,8 @@ easy_admin:
           - content
           - updated
           - online
-          - tags
           - category
+          - tags
       new:
         fields:
           - author
@@ -40,5 +40,5 @@ easy_admin:
           - resume
           - content
           - online
-          - tags
           - category
+          - tags

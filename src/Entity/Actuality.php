@@ -64,6 +64,7 @@ class Actuality
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="actualities")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $category;
 
