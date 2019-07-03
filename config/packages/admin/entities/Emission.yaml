@@ -1,0 +1,32 @@
+easy_admin:
+  entities:
+    Emission:
+      class: App\Entity\Emission
+      list:
+        fields:
+          - id
+          - online
+          - name
+          - slug
+          - slogan
+          - description
+      show:
+        fields:
+          - id
+          - name
+          - slug
+          - slogan
+          - description
+          - online
+      edit:
+        fields:
+          - name
+          - slogan
+          - description
+          - online
+      new:
+        fields:
+          - name
+          - slogan
+          - description
+          - online

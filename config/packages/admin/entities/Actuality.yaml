@@ -4,8 +4,8 @@ easy_admin:
       class: App\Entity\Actuality
       list:
         fields:
-          - online
           - id
+          - online
           - created
           - author
           - title
@@ -15,12 +15,12 @@ easy_admin:
       show:
         fields:
           - id
+          - online
           - created
           - updated
           - author
           - title
           - content
-          - online
           - category
           - tags
       edit:

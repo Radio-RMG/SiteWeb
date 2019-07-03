@@ -17,4 +17,7 @@ easy_admin:
         children:
           - {entity: 'Contact', icon: 'address-book-o', label: 'Formulaire'}
           - {entity: 'Subject', icon: 'map-marker', label: 'Destinataire'}
+      - label: 'Menu'
+        children:
+          - {entity: 'Emission', label: 'Emission'}
 

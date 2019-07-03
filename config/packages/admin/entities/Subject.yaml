@@ -5,6 +5,7 @@ easy_admin:
       list:
         fields:
           - id
+          - online
           - name
           - email
           - contacts
@@ -12,13 +13,16 @@ easy_admin:
         fields:
           - name
           - email
+          - online
       edit:
         fields:
           - name
           - email
+          - online
       show:
         fields:
           - id
+          - online
           - name
           - email
           - contacts

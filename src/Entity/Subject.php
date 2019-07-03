@@ -33,6 +33,11 @@ class Subject
      */
     private $contacts;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $online;
+
     public function __construct()
     {
         $this->contacts = new ArrayCollection();
@@ -101,5 +106,17 @@ class Subject
     public function __toString()
     {
         return $this->name;
+    }
+
+    public function getOnline(): ?bool
+    {
+        return $this->online;
+    }
+
+    public function setOnline(?bool $online): self
+    {
+        $this->online = $online;
+
+        return $this;
     }
 }
