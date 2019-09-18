@@ -18,6 +18,7 @@ easy_admin:
           - {entity: 'Contact', icon: 'address-book-o', label: 'Formulaire'}
           - {entity: 'Subject', icon: 'map-marker', label: 'Destinataire'}
       - label: 'Menu'
+        icon: bars
         children:
-          - {entity: 'Emission', label: 'Emission'}
+          - {entity: 'Emission', icon: 'arrow-alt-circle-right', label: 'Emission'}
 
