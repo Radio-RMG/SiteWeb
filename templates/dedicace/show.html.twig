@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dedicace{% endblock %}
+
+{% block body %}
+    <h1>Dedicace</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ dedicace.id }}</td>
+            </tr>
+            <tr>
+                <th>Pseudo</th>
+                <td>{{ dedicace.pseudo }}</td>
+            </tr>
+            <tr>
+                <th>Message</th>
+                <td>{{ dedicace.message }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ dedicace.date ? dedicace.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Ip</th>
+                <td>{{ dedicace.ip }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('dedicace_index') }}">back to list</a>
+
+    <a href="{{ path('dedicace_edit', {'id': dedicace.id}) }}">edit</a>
+
+    {{ include('dedicace/_delete_form.html.twig') }}
+{% endblock %}

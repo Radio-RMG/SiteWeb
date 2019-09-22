@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} Votre dédicace
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1>Nouvelle dédicace</h1>
+
+        {{ include('dedicace/_form.html.twig') }}
+
+    </div>
+{% endblock %}

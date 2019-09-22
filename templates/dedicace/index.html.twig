@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} Admin Dédicace
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1>Les Dédicaces</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width: 20%;">Date</th>
+                    <th style="width: 15%;">IP</th>
+                    <th style="width: 15%;">Pseudo</th>
+                    <th style="width: 40%;">Message</th>
+                    <th style="width: 10%;">actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for dedicace in dedicaces %}
+                <tr>
+                    <td>{{ dedicace.date ? dedicace.date|date('d-m-Y à H:i:s') : '' }}</td>
+                    <td>{{ dedicace.ip }}</td>
+                    <td>{{ dedicace.pseudo }}</td>
+                    <td>{{ dedicace.message }}</td>
+                    <td>
+                        <a class="btn btn-sm btn-primary" href="{{ path('dedicace_edit', {'id': dedicace.id}) }}"><i class="fa fa-edit"></i></a>
+                        {{ include('dedicace/_delete_form.html.twig') }}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">Aucune dédicace actuellement</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <a class="btn btn-success" href="{{ path('dedicace_new') }}"><span class="fa fa-plus"></span>
+            Ajouter
+        </a>
+    </div>
+{% endblock %}

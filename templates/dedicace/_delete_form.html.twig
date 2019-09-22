@@ -1,0 +1,7 @@
+<form method="post" style="display: inline-block" action="{{ path('dedicace_delete', {'id': dedicace.id}) }}" onsubmit="return confirm('Es-tu vraiment sûr de vouloir supprimer la dédicace de {{ dedicace.pseudo }}?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ dedicace.id) }}">
+    <button class="btn btn-sm btn-danger">
+        <i class="far fa-trash-alt"></i>
+    </button>
+</form>
